@@ -1,7 +1,7 @@
 <?php
 
 function beevyco_register_remove_actions() {
-	if ( function_exists( 'rcpga_group_accounts' ) ) {
+	if ( is_main_site() ) {
 		remove_action( 'rcp_form_errors', array( rcpga_group_accounts()->actions, 'require_group_name' ) );
 	}
 }

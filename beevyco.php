@@ -1,6 +1,6 @@
 <?php
 if ( !defined( 'BEEVY_CO_PLUGIN_DIR' ) ) {
-	define( 'BEEVY_CO_PLUGIN_DIR', trailingslashit( ABSPATH . 'wp-content/mu-plugins/beevyco' ) );
+	define( 'BEEVY_CO_PLUGIN_DIR', trailingslashit( plugin_dir_path( __FILE__ ) . 'beevyco' ) );
 }
 
 if ( !defined( 'BEEVY_CO_PLUGIN_FILE' ) ) {
@@ -16,4 +16,4 @@ function beevyco_includes() {
 	require_once BEEVY_CO_PLUGIN_DIR . 'rcp-mods.php';
 	require_once BEEVY_CO_PLUGIN_DIR . 'woocommerce-wizard-mods.php';
 }
-add_action( 'init', 'beevyco_includes' );
+add_action( 'plugins_loaded', 'beevyco_includes', 9999 );
